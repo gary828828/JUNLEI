@@ -24,8 +24,8 @@ import time
 def _generate_parent(length, geneSet, get_fitness):
     genes = []
     while len(genes) < length:
-        sampleSize = min(length - len(genes), len(geneSet))
-        genes.extend(random.sample(geneSet, sampleSize))
+        sampleSize = min(length - len(genes), len(geneSet)) 
+        genes.extend(random.sample(geneSet, sampleSize)) #random.sample: 多個字元中選取特定數量的字元
     genes = ''.join(genes)
     fitness = get_fitness(genes)
     return Chromosome(genes, fitness)
